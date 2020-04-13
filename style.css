@@ -1,0 +1,46 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .results{
+        grid-area: 1 / 1 / 2 / 5; 
+        background-color: darkorange;
+        
+    }
+
+    #howMany {
+        grid-area: 2 / 1 / 3 / 5;
+        background-color: darkorchid;
+        
+        
+    }
+
+    #bigLetters { 
+        grid-area: 3 / 1 / 4 / 3; 
+        background-color: darkred;
+    }
+
+    #littleLetters { 
+        grid-area: 3 / 3 / 4 / 5; 
+        background-color: deeppink;
+    }
+
+    #someNumbs {
+        grid-area: 4 / 1 / 5 / 3;
+        background-color: forestgreen;
+    }
+
+    #someSymbs { 
+        grid-area: 4 / 3 / 5 / 5; 
+        background-color: gold;
+
+    }
+
+    #generate { 
+        grid-area: 5 / 1 / 6 / 5; 
+        background-color: dodgerblue;
+    }
