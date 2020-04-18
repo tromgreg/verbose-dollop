@@ -25,13 +25,6 @@ body{
     bottom: 20px;
     }
 
-   /* input:only-of-type{
-        float: none;
-
-    }
-    
-*/
-
     .results{
         grid-area: 1 / 1 / 2 / 5; 
         background-color: #2D3142;
@@ -45,7 +38,7 @@ body{
     .setting{
         padding: 5px;
         margin-bottom: 7px;
-        border-radius: 5rem;
+        border-radius: 5rem;      
         font-size: 2vw;
         
         }
