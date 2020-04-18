@@ -13,10 +13,8 @@ const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 //DOM for buttons
 const generateEl = document.getElementById('generate');
-const clipboardEl = document.getElementById('clipboard');
 
 
-//need
 const randomGen = {
 	lower : getLowerCase,
 	upper: getUpperCase,
