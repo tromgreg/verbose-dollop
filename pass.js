@@ -16,17 +16,17 @@ const generateEl = document.getElementById('generate');
 const clipboardEl = document.getElementById('clipboard');
 
 
-
+//need
 const randomGen = {
 	lower : getLowerCase,
 	upper: getUpperCase,
 	number: getNumbers,
-	symbol: getRandomsymbols
+	symbol: getRandomSymbols
 };
 
 generateEl.addEventListener('click', () => {
 	
-	//geting values for generatEL
+	//getting values for generateEL based on the event of checked or unchecked box plus the value user inputs in length 
 	const length = +lengthEl.value;
 	console.log('length: ', length);
 	
@@ -42,29 +42,26 @@ generateEl.addEventListener('click', () => {
 	const hasSymbol = symbolsEl.checked;
 	console.log('hasSymbol: ', hasSymbol);
 
-
+//shows results in "result"<span>
 	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
 
 
 function generatePassword(lower, upper, number, symbol, length) {
 	let generatedPassword = '';
-	
-	//checks
 	const typesCount = lower + upper + number + symbol;
-	
-	
 	const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
-	//check booleans!
-	// no types selected
+	
 	if(typesCount === 0) {
 		return '';
 	}
-	//loop
+	//loop for types selected
 	for(let i=0; i<length; i+=typesCount) {
 		typesArr.forEach(type => {
+			//Object.keys(type)[0] returns an array of types selected booleans
 			const funcName = Object.keys(type)[0];
-			generatedPassword += randomFunc[funcName]();
+			//adds value to variable
+			generatedPassword += randomGen[funcName]();
 		});
 	}
 	const finalPassword = generatedPassword.slice(0, length);
@@ -87,13 +84,13 @@ function getNumbers(){
 }
 console.log(getNumbers());
 //random symbols are only pulled from the const below
-function getRandomsymbols(){
+function getRandomSymbols(){
     //variable with symbols
     const symbols = "!@#$%^&*()_+?{}[]<>"
     //return from variable array above
     return symbols [Math.floor(Math.random() * symbols.length)];
 }
-console.log(getRandomsymbols());
+console.log(getRandomSymbols());
 
 
 
